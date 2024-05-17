@@ -15,9 +15,4 @@ if(WITH_GPU OR WITH_ROCM OR WITH_MUSA)
     "*.cu")
 endif()
 
-if(WITH_MUSA)
-  list(REMOVE_ITEM func_cu_srcs 
-      "softmax.cu")
-endif()
-
 collect_srcs(kernels_srcs SRCS ${func_cc_srcs} ${func_cu_srcs})
